@@ -8,11 +8,27 @@
   }
 
   .about__flex {
-    flex-direction: column;
     align-items: center;
   }
 }
 @media screen and (max-width:768px){
+  .header {
+    min-height: 550px;
+  }
+
+  .about-h4 {
+    font-size: 56px;
+  }
+
+  .about__grid-item {
+    height: 150px;
+  }
+
+  .header__h1 {
+    font-size: 46px;
+    line-height: 1.4;
+  }
+
   .about {
     padding: 0 0 80px 0;
   }
@@ -24,7 +40,8 @@
   }
 
   .project-h2 {
-    padding-top: 100px;
+    padding-top: 50px;
+    font-size: 30px;
   }
 
   .about__grid {
@@ -37,19 +54,26 @@
     align-items: center;
   }
 
+  .emailus__grid {
+    padding-bottom: 30px;
+  }
+
   .emailus__h2 {
-    padding-top: 0;
+    font-size: 36px;
+    padding-top: 30px;
     grid-column-start: 1;
     grid-column-end: 3;
-    justify-self: center;
+    text-align: center;
     align-self: center;
   }
 
   .emailus__h4 {
+    font-size: 20px;
     grid-column-start: 1;
     grid-column-end: 3;
-    justify-self: center;
+    text-align: center; 
     align-self: center;
+    margin: 20px 0;
   }
 
   .emailus__button {
