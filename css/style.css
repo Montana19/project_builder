@@ -60,9 +60,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1130px;
+  max-width: 1110px;
   width: 100%;
-  padding: 0 10px;
 }
 
 /* Шапка сайта */
@@ -196,7 +195,7 @@ body {
 .about__flex {
   display: flex;
   gap: 30px;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -287,4 +286,172 @@ body {
   font-weight: 500;
   letter-spacing: 0.7px;
   text-transform: uppercase;
+}
+
+/* Блок с сервисами */
+
+.services__inner {
+  text-align: center;
+  padding: 150px 0 138px 0;
+}
+
+.section__h2 {
+  margin-bottom: 66px;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.services__item {
+  background-color: #f7f7f7;
+  height: 250px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 0;
+}
+
+.services__icon {
+  width: 70px;
+  height: 52px;
+  margin: 0 auto 18px;
+}
+
+.services__h4 {
+  letter-spacing: 0.025em;
+  margin: 0 auto;
+  text-transform: uppercase;
+  max-width: 175px;
+}
+
+/* Блок с портфолио */
+
+.porfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+/* FAQ */
+
+.question {
+  padding: 151px 0 110px 0;
+}
+.question .section__h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.question__flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.question__h3 {
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 21px;
+}
+
+.question__h3.close {
+  margin-bottom: 33px;
+}
+
+.question__h3.open::before,
+.question__h3.close::before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.question__h3.open::before {
+  transform: rotate(-90deg);
+}
+
+.question__h3.close + .question__p {
+  display: none;
+}
+
+.question__p {
+  color: var(--gray);
+  max-width: 730px;
+  margin-bottom: 35px;
+  line-height: 1.4;
+}
+
+/* Блок с брендами */
+
+.brands {
+  background-color: var(--dark);
+}
+.brands__inner {
+  padding: 100px 0;
+  text-align: center;
+}
+.brands__inner .section__h2 {
+  color: var(--white);
+  margin-bottom: 50px;
+}
+.brands__flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.brands__flex-item {
+  max-width: 170px;
+}
+
+.reviews {
+  padding: 150px 0;
+}
+
+.reviews .section__h2 {
+  text-align: center;
+}
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.item-block {
+  padding: 74px 30px 38px;
+  position: relative;
+  background-color: #f7f7f7;
+  max-width: 350px;
+  height: 254px;
+  margin-bottom: 30px;
+}
+
+.reviews__brackets {
+  position: absolute;
+  left: 25px;
+  top: 34px;
+  transform: rotate(180deg);
+  color: var(--accent);
+  font-family: Oswald;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.reviews__h4 {
+  letter-spacing: 0.55px;
+}
+
+.reviews__h4 span {
+  color: var(--accent);
 }
