@@ -124,7 +124,7 @@ body {
   transition: bottom .3s, transform .3s .15s;
 }
 .menu-list {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   inset: 0;
