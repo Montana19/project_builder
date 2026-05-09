@@ -19,7 +19,7 @@
 
 ## 🚀 Демо
 
-Посмотреть сайт: [GitHub Pages](https://montana19.github.io/project_builder/)
+Посмотреть сайт: [GitHub Pages](https://montana19.github.io/multiadaptive_site/)
 
 ## 📸 Скриншоты
 
