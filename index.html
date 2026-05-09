@@ -8,18 +8,25 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
-  <title>Project builder</title>
+  <title>Multiadaptive site</title>
 </head>
 <body>
-  <header class="header">
+  <header id="header" class="header">
     <div class="container">
       <div href="#" class="header__title">
         <a href="#"><img src="img/logo.svg" alt="logo" class="header-logo"></a>
-        <button class="header__burger">
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-        </button>
+        <div class="burger-bg">
+          <div class="menu">
+            <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+            <label for="burger-checkbox" class="burger"></label>
+            <ul class="menu-list">
+                <li><a href="#header" class="menu-item">Главная</a><li>
+                <li><a href="#services" class="menu-item">О нас</a><li>
+                <li><a href="#contacts" class="menu-item">Контакты</a><li>
+                <li><a href="#reviews" class="menu-item">Отзывы</a><li></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <h1 class="header__h1">Реализуем крупнейшие проекты в России</h1>
       <p class="header__p">Стадионы, газопроводы, мосты, дамбы</p>
@@ -91,7 +98,7 @@
     </div>
   </section>
 
-  <section class="services">
+  <section id="services" class="services">
     <div class="container">
       <div class="services__inner">
         <h2 class="h2-text section__h2">Чем мы занимаемся?</h2>
@@ -221,7 +228,7 @@
     </div>
   </section>
 
-  <section class="reviews">
+  <section id="reviews" class="reviews">
     <div class="container">
       <h2 class="h2-text section__h2">
         отзывы о работе с нами
