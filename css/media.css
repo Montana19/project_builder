@@ -177,6 +177,7 @@
     min-height: 200px;
   }
   .header__h1 {
+    padding-top: 0;
     font-size: 46px;
     line-height: 1.4;
   }
