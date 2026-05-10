@@ -53,6 +53,7 @@
 /* Основные настройки сайта */
 
 body {
+  user-select: none;
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
   background-color: var(--bgc);
@@ -64,7 +65,25 @@ body {
   width: 100%;
 }
 
-/* Бургер-меню */
+/* Фикс-шапка */
+
+.header__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1000;
+}
+
+.header__burger {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
+  margin-bottom: 112px;
+  width: 100%;
+  position: relative;
+}
 
 .burger-checkbox {
   position: absolute;
@@ -75,8 +94,9 @@ body {
   background-color: var(--accent);
   width: 50px;
   height: 50px;
-  display: absolute;
-  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .burger {
@@ -85,7 +105,6 @@ body {
   z-index: 1;
   cursor: pointer;
   display: block;
-  position: relative;
   border: none;
   background: transparent;
   width: 28px;
@@ -103,26 +122,31 @@ body {
   border-radius: 10px;
   background: #fff;
 }
+
 .burger::before {
   top: 0;
   box-shadow: 0 11px 0 #fff;
   transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
 }
+
 .burger::after {
   bottom: 0;
   transition: bottom .3s .15s, transform .3s;
 }
+
 .burger-checkbox:checked + .burger::before {
   top: 11px;
   transform: rotate(45deg);
   box-shadow: 0 6px 0 rgba(0,0,0,0);
   transition: box-shadow .15s, top .3s, transform .3s .15s;
 }
+
 .burger-checkbox:checked + .burger::after {
   bottom: 11px;
   transform: rotate(-45deg);
   transition: bottom .3s, transform .3s .15s;
 }
+
 .menu-list {
   position: absolute;
   display: flex;
@@ -135,9 +159,10 @@ body {
   background: var(--accent);
   list-style-type: none;
   transition: .3s;
-  max-width: 550px;
+  max-width: 650px;
   height: 70px;
 }
+
 .menu-item {
   display: block;
   padding: 8px;
@@ -146,9 +171,11 @@ body {
   text-align: center;
   text-decoration: none;
 }
+
 .menu-item:hover {
   background: rgba(255,255,255,.2)
 }
+
 .burger-checkbox:checked ~ .menu-list {
   transform: translateY(100%);
 }
@@ -160,42 +187,17 @@ body {
   background-image: url(../img/header_bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-}
-.header__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   padding-top: 20px;
-  margin-bottom: 112px;
 }
+
 .header-logo {
   width: 60px;
   height: 60px;
 }
-.header__burger {
-  width: 50px;
-  height: 50px;
-  background-color: var(--accent);
-  cursor: pointer;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.burger-line {
-  display: block;
-  width: 21px;
-  height: 3px;
-  background-color: #fff;
-  margin-bottom: 4px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 .header__h1 {
   font-weight: 500;
+  padding-top: 110px;
   font-size: 64px;
   line-height: 95px;
   text-align: center;
@@ -205,6 +207,7 @@ body {
   margin: 0 auto 17px;
   color: var(--white);
 }
+
 .header__p {
   margin: 0 auto;
   color: var(--white);
@@ -315,18 +318,18 @@ body {
 
 /* Блок с запросом */
 
-.emailus {
+.request {
   background-color: var(--accent);
 }
-.emailus__grid {
+
+.request__grid {
   min-height: 181px;
   display: grid;
   grid-template-columns: repeat(2, 562px, 1fr);
   grid-template-rows: repeat(2, 100px, 70px);
   align-items: center;
 }
-.emailus__h2 {
-  max-width: 537px;
+.request__h2 {
   color: var(--white);
   font-size: 48px;
   font-weight: 700; 
@@ -334,10 +337,12 @@ body {
   text-transform: uppercase;
   grid-column-start: 1;
   grid-column-end: 2;
-  padding-top: 15px;
+  padding-top: 19px;
+  line-height: 53px;
 }
-.emailus__h4 {
-  max-width: 562px;
+
+.request__h4 {
+  max-width: 600px;
   color: var(--white);
   font-size: 24px;
   font-weight: 700;
@@ -347,7 +352,8 @@ body {
   grid-column-end: 2;
   align-self: self-start;
 }
-.emailus__button {
+
+.request__button {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -364,12 +370,14 @@ body {
   border: none;
   margin-top: 14px;
 }
-.emailus__button-icon {
+
+.request__button-icon {
   color: #000;
   font-size: 18px;
   letter-spacing: 0.9px;
 }
-.emailus__button-text {
+
+.request__button-text {
   color: #000;
   font-size: 14px;
   font-weight: 500;
@@ -400,7 +408,8 @@ body {
 .services__item {
   background-color: #f7f7f7;
   height: 250px;
-  width: 350px;
+  min-width: 350px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 48px 0;
@@ -432,49 +441,33 @@ body {
 .question {
   padding: 151px 0 110px 0;
 }
+
 .question .section__h2 {
   text-align: center;
   margin-bottom: 50px;
 }
+
 .question__flex {
   display: flex;
   flex-direction: column;
+}
+
+.question__flex-item {
+  margin-bottom: 13px;
 }
 
 .question__h3 {
   color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 21px;
-}
-
-.question__h3.close {
-  margin-bottom: 33px;
-}
-
-.question__h3.open::before,
-.question__h3.close::before {
-  content: '';
-  display: inline-block;
-  background-image: url(../img/arrow.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 10px;
-  width: 15px;
-  height: 15px;
-}
-
-.question__h3.open::before {
-  transform: rotate(-90deg);
-}
-
-.question__h3.close + .question__p {
-  display: none;
+  cursor: pointer;
+  padding-left: 10px;
 }
 
 .question__p {
   color: var(--gray);
   max-width: 730px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   line-height: 1.4;
 }
 
@@ -483,14 +476,17 @@ body {
 .brands {
   background-color: var(--dark);
 }
+
 .brands__inner {
   padding: 100px 0;
   text-align: center;
 }
+
 .brands__inner .section__h2 {
   color: var(--white);
-  margin-bottom: 50px;
+  margin-bottom: 49px;
 }
+
 .brands__flex {
   display: flex;
   flex-wrap: wrap;
@@ -502,26 +498,29 @@ body {
   max-width: 170px;
 }
 
+/* Блок с отзывами */
+
 .reviews {
-  padding: 150px 0;
+  padding: 149px 0 144px;
 }
 
 .reviews .section__h2 {
   text-align: center;
 }
+
 .reviews__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-.item-block {
+.reviews__item-block {
   padding: 74px 30px 38px;
   position: relative;
   background-color: #f7f7f7;
-  max-width: 350px;
-  height: 254px;
-  margin-bottom: 30px;
+  width: 100%;
+  min-height: 254px;
+  margin-bottom: 27px;
 }
 
 .reviews__brackets {
@@ -543,4 +542,64 @@ body {
 
 .reviews__h4 span {
   color: var(--accent);
+}
+
+/* Блок с контактами */
+
+.contacts {
+  padding: 100px 0 150px;
+}
+
+.contacts__h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contacts__grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-content: space-between;
+  justify-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.contacts__img {
+  margin: 0 auto;
+  margin-bottom: 17px;
+  width: 50px;
+  height: 50px;
+}
+
+.contacts__h3-grey,
+.contacts__h3-black {
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.contacts__h3-black {
+  color: black;
+  padding-top: 15px;
+}
+
+.contacts__h3-black a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contacts__h3-accent a {
+  color: var(--accent);
+}
+
+/* Подвал сайта */
+
+.footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 30px 0;
+}
+
+.footer__flex {
+  display: flex;
+  justify-content: space-between;
 }

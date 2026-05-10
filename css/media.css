@@ -38,12 +38,17 @@
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
+
+  .contacts__grid {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:800px){
   .menu-list {
     flex-direction: column;
     margin: -330px auto;
-    max-width: 330px;
+    max-width: 230px;
   }
 
   .menu-list {
@@ -91,20 +96,19 @@
     align-items: center;
   }
 
-  .emailus__grid {
-    padding-bottom: 30px;
+  .request__grid {
+    padding: 20px 0;
+    justify-content: center;
   }
 
-  .emailus__h2 {
+  .request__h2 {
     font-size: 36px;
-    padding-top: 30px;
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
-    align-self: center;
   }
 
-  .emailus__h4 {
+  .request__h4 {
     font-size: 20px;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -113,7 +117,7 @@
     margin: 20px 0;
   }
 
-  .emailus__button {
+  .request__button {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
@@ -125,7 +129,7 @@
   }
 
   .services__grid {
-    grid-template-columns: repeat(1, 350px);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .services__inner {
@@ -140,27 +144,55 @@
   .question {
     padding: 80px 0;
   }
+
+  .reviews__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contacts__grid {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(4,1fr);
+  }
+
+  .footer__flex {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:391px) {
+
+  .menu-list {
+    flex-direction: column;
+    margin: -330px auto;
+    min-width: 230px;
+  }
+
+  .menu-list {
+    height: 330px;
+  }
+
+  .header {
+    min-height: 200px;
+  }
   .header__h1 {
     font-size: 46px;
     line-height: 1.4;
   }
 
-  .services__inner {
+  .services__inner,
+  .reviews,
+  .question,
+  .contacts {
     padding: 50px 0;
+  }
+
+  .services__item {
+    min-width: 200px;
   }
 
   .porfolio__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .question {
-    padding: 50px 0;
-  }
-
-  .reviews__grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
